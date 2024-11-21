@@ -8,8 +8,7 @@ const Hero = () => (
     <h1 className="mb-4">React.js Sample Project</h1>
 
     <p className="lead">
-      This is a sample application that demonstrates an authentication flow for
-      an SPA, using <a href="https://reactjs.org">React.js</a>
+        Take participation in our new survey: <a href='https://survey-stage.pg.com/3925/60575'>click this link</a>
     </p>
   </div>
 );

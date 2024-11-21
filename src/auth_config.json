@@ -1,4 +1,5 @@
 {
   "domain": "survey-builder-sandbox.us.auth0.com",
-  "clientId": "zPMgKw46qAatFR85XJJ55eFaDjOeiR0S"
+  "clientId": "zPMgKw46qAatFR85XJJ55eFaDjOeiR0S",
+  "audience": "https://survey-builder-sandbox.us.auth0.com/api/v2/"
 }
