@@ -16,6 +16,9 @@ import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+// import CallbackHandler from "./components/CallbackHandler";
+import {SomeDummyPage} from "./components/SomeDummyPage";
+import {NotFoundPage} from "./views/NotFoundPage";
 initFontAwesome();
 
 const App = () => {
@@ -37,7 +40,10 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/profile" component={Profile} />
+            <Route path="/page-with-embedded-survey" component={SomeDummyPage} />
+            {/*<Route path="/callback" component={CallbackHandler} />*/}
             <Route path="/external-api" component={ExternalApi} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </Container>
         <Footer />

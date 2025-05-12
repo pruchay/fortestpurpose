@@ -8,9 +8,13 @@ import history from "./utils/history";
 import { getConfig } from "./config";
 
 const onRedirectCallback = (appState) => {
-  history.push(
-    appState && appState.returnTo ? appState.returnTo : window.location.pathname
-  );
+  console.log('onRedirectCallback appState', appState)
+  console.log('onRedirectCallback appState?.returnTo', appState?.returnTo)
+  // history.push(
+  //   appState && appState.returnTo ? appState.returnTo : window.location.pathname
+  // );
+  history.push('/')
+  // window.history.replaceState({}, document.title, appState?.returnTo || '/');
 };
 
 // Please see https://auth0.github.io/auth0-react/interfaces/Auth0ProviderOptions.html
@@ -21,8 +25,10 @@ const providerConfig = {
   domain: config.domain,
   clientId: config.clientId,
   onRedirectCallback,
+  cacheLocation: 'localstorage',
   authorizationParams: {
-    redirect_uri: window.location.origin,
+    // redirect_uri: `${window.location.origin}`,
+    redirect_uri: `${window.location.origin}/callback`,
     ...(config.audience ? { audience: config.audience } : null),
   },
 };
