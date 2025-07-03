@@ -55,6 +55,16 @@ const NavBar = () => {
                   Home
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink
+                    tag={RouterNavLink}
+                    to="/page-with-embedded-survey"
+                    exact
+                    activeClassName="router-link-exact-active"
+                >
+                  Some page with embedded survey
+                </NavLink>
+              </NavItem>
               {isAuthenticated && (
                 <NavItem>
                   <NavLink

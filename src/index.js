@@ -10,10 +10,15 @@ import { getConfig } from "./config";
 const onRedirectCallback = (appState) => {
   console.log('onRedirectCallback appState', appState)
   console.log('onRedirectCallback appState?.returnTo', appState?.returnTo)
+  if (appState && appState.returnTo) {
+    window.location.href = appState.returnTo
+  } else {
+    history.push('/')
+  }
   // history.push(
   //   appState && appState.returnTo ? appState.returnTo : window.location.pathname
   // );
-  history.push('/')
+  // history.push('/')
   // window.history.replaceState({}, document.title, appState?.returnTo || '/');
 };
 
