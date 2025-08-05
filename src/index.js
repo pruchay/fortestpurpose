@@ -39,46 +39,46 @@ const providerConfig = {
 };
 
 
-const handleAuthRedirect = () => {
-    const url = new URL(window.location.href);
-    const code = url.searchParams.get('code');
-    const state = url.searchParams.get('state');
-
-    if (url.pathname === '/callback' && code && state) {
-        // save to sessionStorage
-        sessionStorage.setItem('auth_code', code);
-        sessionStorage.setItem('auth_state', state);
-
-        const sendMessageToComponent = () => {
-            const surveyComponent = document.querySelector('pg-embedded-survey');
-
-            if (surveyComponent) {
-                console.log('📤 Відправляємо postMessage у Web Component', {
-                    type: 'WEB_COMPONENT_AUTH',
-                    payload: { code, state },
-                });
-
-                window.postMessage(
-                    {
-                        type: 'WEB_COMPONENT_AUTH',
-                        payload: { code, state },
-                    },
-                    '*'
-                );
-
-                // Після надсилання чистимо URL
-                window.history.replaceState({}, document.title, '/');
-            } else {
-                console.log('⌛ Очікуємо завантаження Web Component...');
-                setTimeout(sendMessageToComponent, 500); // Повторна перевірка через 500мс
-            }
-        };
-
-        sendMessageToComponent();
-    }
-};
-
-handleAuthRedirect();
+// const handleAuthRedirect = () => {
+//     const url = new URL(window.location.href);
+//     const code = url.searchParams.get('code');
+//     const state = url.searchParams.get('state');
+//
+//     if (url.pathname === '/callback' && code && state) {
+//         // save to sessionStorage
+//         sessionStorage.setItem('auth_code', code);
+//         sessionStorage.setItem('auth_state', state);
+//
+//         const sendMessageToComponent = () => {
+//             const surveyComponent = document.querySelector('pg-embedded-survey');
+//
+//             if (surveyComponent) {
+//                 console.log('📤 Відправляємо postMessage у Web Component', {
+//                     type: 'WEB_COMPONENT_AUTH',
+//                     payload: { code, state },
+//                 });
+//
+//                 window.postMessage(
+//                     {
+//                         type: 'WEB_COMPONENT_AUTH',
+//                         payload: { code, state },
+//                     },
+//                     '*'
+//                 );
+//
+//                 // Після надсилання чистимо URL
+//                 window.history.replaceState({}, document.title, '/');
+//             } else {
+//                 console.log('⌛ Очікуємо завантаження Web Component...');
+//                 setTimeout(sendMessageToComponent, 500); // Повторна перевірка через 500мс
+//             }
+//         };
+//
+//         sendMessageToComponent();
+//     }
+// };
+//
+// handleAuthRedirect();
 
 const root = createRoot(document.getElementById('root'));
 root.render(
