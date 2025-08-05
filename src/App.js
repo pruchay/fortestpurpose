@@ -43,7 +43,7 @@ const App = () => {
             <Route path="/profile" component={Profile} />
             <Route path="/page-with-embedded-survey" component={SomeDummyPage} />
             <Route path="/page-with-embedded-survey-different-client-id" component={EmbedSurveyDifferentId} />
-            {/*<Route path="/callback" component={CallbackHandler} />*/}
+            <Route path="/callback" component={CallbackHandler} />
             <Route path="/external-api" component={ExternalApi} />
             <Route path="*" component={NotFoundPage} />
           </Switch>

@@ -10,7 +10,7 @@ const CallbackHandler = () => {
     useEffect(() => {
         const handleAuth = async () => {
             // try {
-                console.log('🚀 Ініціалізація handleAuth...');
+                console.log('🚀 Init handleAuth...');
 
                 console.log('window location', window.location.href)
 
