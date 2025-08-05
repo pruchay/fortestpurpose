@@ -16,7 +16,7 @@ import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
-// import CallbackHandler from "./components/CallbackHandler";
+import CallbackHandler from "./components/CallbackHandler";
 import {SomeDummyPage} from "./components/SomeDummyPage";
 import {NotFoundPage} from "./views/NotFoundPage";
 import {EmbedSurveyDifferentId} from "./components/EmbedSurveyDifferentId";
